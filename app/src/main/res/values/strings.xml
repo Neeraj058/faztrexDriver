@@ -1,0 +1,146 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- app name -->
+    <string name="app_name" translatable="false">FazTrex</string>
+
+    <!-- unicode characters -->
+    <string name="unicode_rs" translatable="false">&#x20B9;</string>
+    <string name="unicode_copy_right" translatable="false">&#169;</string>
+    <string name="unicode_copy_registered" translatable="false">&#174;</string>
+
+    <string name="default_notification_channel_id">Default Channel</string>
+
+    <!-- footer message -->
+    <!--<string name="msg_content_footer">Copyright &#169; 2019 Shree Maruti Courier Services Private Limited<sup>&#174;</sup>. All rights reserved.</string>-->
+    <!--<string name="msg_content_footer">Copyright &#169; 2019 <a href="https://www.shreemaruticourier.com/">Shree Maruti Courier Services Private Limited</a><sup>&#174;</sup>. All rights reserved.</string>-->
+    <!--<string name="msg_content_footer">Copyright  2019 FazTrex. All rights reserved.</string>-->
+    <string name="msg_content_footer" tools:ignore="TypographyDashes">Copyright &#169; 2019-20. All rights reserved by Yiron Technologies (P) Ltd</string>
+
+    <!-- general messages -->
+    <string name="msg_no_internet">Make sure your device is connected to the Internet.</string>
+    <string name="msg_back_pressed">Press back again to exit</string>
+
+    <!-- error messages -->
+    <string name="err_msg_api_response_failure">Something went wrong.</string>
+
+    <!-- dialog messages -->
+    <string name="dialog_title_authentication_failed">Authentication Failed</string>
+    <string name="dialog_title_sign_out">Sign out?</string>
+    <string name="dialog_msg_sign_out">Are you sure you want to sign out from the application?</string>
+    <string name="dialog_title_confirmation">Confirmation</string>
+    <string name="dialog_msg_dimension_delete_confirmation">Are you sure you want to delete this dimension details?</string>
+    <string name="dialog_msg_docket_delete_confirmation">Are you sure you want to delete this docket?</string>
+    <string name="dialog_msg_payment_delete_confirmation">Are you sure you want to delete this payment details?</string>
+
+    <!-- navigation drawer menu title -->
+    <string name="nav_menu_title_sales">Sales</string>
+    <string name="nav_menu_title_hub">Hub</string>
+    <string name="nav_menu_title_franchisee">Franchisee</string>
+    <string name="nav_menu_title_billing_account"><![CDATA[Billing & Account]]></string>
+    <string name="nav_menu_title_dashboard">Dashboard</string>
+    <string name="nav_menu_title_docket_booking">Docket Booking</string>
+    <string name="nav_menu_title_franchisee_manifest">Franchisee Manifest</string>
+    <string name="nav_menu_title_manifest_inward_hub">Manifest Inward - Hub</string>
+    <string name="nav_menu_title_manifest_outward_hub">Manifest Outward - Hub</string>
+    <string name="nav_menu_title_lorry_hire">Lorry Hire</string>
+    <string name="nav_menu_title_delivery_run_sheet">Delivery Run Sheet</string>
+    <string name="nav_menu_title_bill">Bill</string>
+    <string name="nav_menu_title_money_receipt">Money Receipt</string>
+    <string name="nav_menu_title_transactions">Transactions</string>
+    <string name="nav_menu_title_docket_tracking">Docket Tracking</string>
+    <string name="nav_menu_title_postcode_tracking">Postcode Tracking</string>
+
+    <!-- navigation header title -->
+    <string name="nav_header_title_home">Home</string>
+    <string name="nav_header_title_docket_booking">Docket Booking</string>
+    <string name="nav_header_title_docket">Docket</string>
+    <string name="nav_header_title_docket_details">Docket Details</string>
+    <string name="nav_header_title_docket_tracking">Docket Tracking</string>
+    <string name="nav_header_title_postcode_tracking">Postcode Tracking</string>
+    <string name="nav_header_title_drs">Delivery Run Sheet</string>
+    <string name="nav_header_title_drs_details">Delivery Run Sheet Details</string>
+    <string name="nav_header_title_drs_docket_delivery_status">Update Delivery Status</string>
+    <string name="nav_header_title_change_password">Change Password</string>
+    <string name="nav_header_title_request_payment">Request Payment</string>
+    <string name="nav_header_title_payment_details">Payment Details</string>
+
+    <!-- menu titles -->
+    <string name="menu_title_view_details">View Details</string>
+    <string name="menu_title_update">Update</string>
+    <string name="menu_title_delete">Delete</string>
+    <string name="menu_title_view_pod">View POD</string>
+    <string name="menu_title_mark_as_picked">Mark as Picked</string>
+    <string name="menu_title_mark_as_delivered">Mark as Delivered</string>
+    <string name="menu_title_view_on_map">View on Map</string>
+
+    <!-- docket booking tab title -->
+    <string name="tab_title_docket_booking_details">Booking Details</string>
+    <string name="tab_title_docket_charges_details">Charges Details</string>
+
+    <!-- button title -->
+    <string name="btn_title_proceed">Proceed</string>
+    <string name="btn_title_cancel">Cancel</string>
+    <string name="btn_title_ok">OK</string>
+    <string name="btn_title_submit">Submit</string>
+    <string name="btn_title_go_to_settings">Settings</string>
+
+    <!-- validation strings -->
+    <string name="val_msg_mandatory_fields">This is mandatory field</string>
+    <string name="val_msg_enter_username">Please enter username</string>
+    <string name="val_msg_enter_password">Please enter password</string>
+
+    <!-- strings for intent data key -->
+    <string name="key_item_position" translatable="false">key_item_position</string>
+    <string name="key_is_edit" translatable="false">key_is_edit</string>
+    <string name="key_read_only" translatable="false">key_read_only</string>
+    <string name="key_user_id" translatable="false">key_user_id</string>
+    <string name="key_email_address" translatable="false">key_email_address</string>
+    <string name="key_verification_code" translatable="false">key_verification_code</string>
+    <string name="key_docket_id" translatable="false">key_docket_id</string>
+    <string name="key_drs_id" translatable="false">key_drs_id</string>
+    <string name="key_data_drs" translatable="false">key_data_drs</string>
+    <string name="key_data_drs_docket" translatable="false">key_data_drs_docket</string>
+    <string name="key_data_mpesa_request" translatable="false">key_data_mpesa_request</string>
+
+    <!-- shared preference keys -->
+    <string name="pref_is_login" translatable="false">pref_is_login</string>
+    <string name="pref_is_first_login" translatable="false">pref_is_first_login</string>
+    <string name="pref_user_data" translatable="false">pref_user_data</string>
+
+    <string name="action_change_password">Change Password</string>
+
+    <string name="image_description">This is image</string>
+
+    <string name="title_docket_details">Docket Details</string>
+    <string name="title_consignor_details">Consignor Details</string>
+    <string name="title_consignee_details">Consignee Details</string>
+    <string name="title_other_details">Other Details</string>
+    <string name="title_product_details">Product Details</string>
+    <string name="title_dimension_details">Dimension Details</string>
+
+    <!-- spinner headers title -->
+    <string name="spinner_state_header_title">Select Destination State</string>
+    <string name="spinner_city_header_title">Select Destination City</string>
+    <string name="spinner_postcode_header_title">Select Postcode</string>
+    <string name="spinner_reason_header_title">Select Reason</string>
+    <string name="spinner_packing_type_header_title">Select Packing Type</string>
+    <string name="spinner_verticle_header_title">Select Verticle</string>
+    <string name="spinner_delivery_type_header_title">Select Delivery Type</string>
+    <string name="spinner_delivery_status_header_title">Select Delivery Status</string>
+    <string name="spinner_consignor_header_title">Select Consignor</string>
+    <string name="spinner_payment_type_header_title">Select Payment Type</string>
+    <string name="spinner_reference_title">Select Bank</string>
+
+    <string name="spinner_delivery_type_cod">COD / DOD</string>
+    <string name="spinner_delivery_type_hub_delivery">Hub Delivery</string>
+    <string name="spinner_delivery_type_dacc">DACC</string>
+
+    <string name="spinner_delivery_status_delivered">Delivered</string>
+    <string name="spinner_delivery_status_undelivered">Undelivered</string>
+    <string name="item_menu_title_add_pod">Add POD</string>
+    <string name="generate_otp">Generate OTP</string>
+    <string name="verify_otp">Verify OTP</string>
+    <string name="secure_delivery">Secure Delivery</string>
+
+    <string name="docket_number_string">Docket No:- %s</string>
+</resources>

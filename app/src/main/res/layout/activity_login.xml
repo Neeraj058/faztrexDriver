@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/tv_footer_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/size_10dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_header_logo"
+                    android:layout_width="@dimen/size_240dp"
+                    android:layout_height="@dimen/size_60dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/size_30dp"
+                    android:contentDescription="@string/image_description"
+                    android:src="@drawable/faztrex_banner" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_header_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/iv_header_logo"
+                    android:layout_marginTop="@dimen/size_25dp"
+                    android:ellipsize="end"
+                    android:gravity="center_horizontal"
+                    android:maxLines="1"
+                    android:paddingStart="@dimen/size_10dp"
+                    android:paddingEnd="@dimen/size_10dp"
+                    android:text="Log in to your account"
+                    android:textAppearance="@style/TextStyleSemiBold"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="@dimen/text_22sp"
+                    tools:ignore="HardcodedText" />
+
+                <View
+                    android:id="@+id/view_separator"
+                    android:layout_width="@dimen/size_100dp"
+                    android:layout_height="@dimen/size_2dp"
+                    android:layout_below="@+id/tv_header_title"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/size_6dp"
+                    android:background="@color/colorThemeRed" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tnl_username"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/view_separator"
+                    android:layout_marginTop="@dimen/size_35dp"
+                    android:textColorHint="@color/colorTextHint">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/colorDivider"
+                        android:drawableStart="@drawable/ic_user_outline"
+                        android:drawablePadding="@dimen/size_10dp"
+                        android:drawableTint="@color/colorTextPrimary"
+                        android:hint="Username"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:longClickable="false"
+                        android:maxLength="100"
+                        android:textAppearance="@style/TextStyleNormal"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textColorHint="@color/colorTextHint"
+                        android:textSize="@dimen/text_14sp"
+                        tools:ignore="HardcodedText"
+                        tools:targetApi="m"
+                        tools:text="urvish.panchal@cittasolutions.com" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tnl_password"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tnl_username"
+                    android:layout_marginTop="@dimen/size_10dp"
+                    android:textColorHint="@color/colorTextHint"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="@color/colorTextPrimary">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/colorDivider"
+                        android:drawableStart="@drawable/ic_lock_outline"
+                        android:drawablePadding="@dimen/size_10dp"
+                        android:drawableTint="@color/colorTextPrimary"
+                        android:hint="Password"
+                        android:imeOptions="actionDone"
+                        android:inputType="textPassword"
+                        android:longClickable="false"
+                        android:maxLength="30"
+                        android:nextFocusDown="@id/btn_login"
+                        android:textAppearance="@style/TextStyleNormal"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textColorHint="@color/colorTextHint"
+                        android:textSize="@dimen/text_14sp"
+                        tools:ignore="HardcodedText"
+                        tools:targetApi="m"
+                        tools:text="urvish.panchal@cittasolutions.com" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_forgot_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tnl_password"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/size_15dp"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:ellipsize="end"
+                    android:focusable="true"
+                    android:gravity="end|center_vertical"
+                    android:maxLines="1"
+                    android:padding="@dimen/size_10dp"
+                    android:text="Forgot Password?"
+                    android:textAppearance="@style/TextStyleSemiBold"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="@dimen/text_14sp"
+                    tools:ignore="HardcodedText" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_login"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_60dp"
+                    android:layout_below="@id/tv_forgot_password"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/size_30dp"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:gravity="center"
+                    android:text="Login"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/TextStyleSemiBold"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/text_16sp"
+                    app:cornerRadius="@dimen/size_4dp"
+                    app:rippleColor="@color/colorPrimaryDark"
+                    tools:ignore="HardcodedText" />
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_footer_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:ellipsize="end"
+            android:gravity="center_horizontal"
+            android:maxLines="2"
+            android:paddingStart="@dimen/size_4dp"
+            android:paddingTop="@dimen/size_8dp"
+            android:paddingEnd="@dimen/size_4dp"
+            android:paddingBottom="@dimen/size_8dp"
+            android:text="@string/msg_content_footer"
+            android:textAppearance="@style/TextStyleNormal"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/text_10sp" />
+
+    </RelativeLayout>
+
+</layout>
+
+    <!--
+    <?xml version="1.0" encoding="utf-8"?>
+
+    <layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".activity.LoginActivity">
+
+            <com.anychart.AnyChartView
+                android:id="@+id/any_chart_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+
+    </layout>-->

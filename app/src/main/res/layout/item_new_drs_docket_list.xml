@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.courier365cloud.faztrex.utils.AppUtils" />
+
+        <variable
+            name="drsDocket"
+            type="com.courier365cloud.faztrex.network.model.response.NewDriverDocket" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/size_8dp"
+        app:cardCornerRadius="@dimen/size_2dp"
+        app:cardElevation="@dimen/size_4dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/size_6dp">
+
+            <RelativeLayout
+                android:id="@+id/container_section_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/tv_delivery_status"
+                    android:gravity="center_vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_docket_no"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="@dimen/text_14sp"
+                        tools:text="#1. 025698559" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_booking_date"
+                        convertDateFormat="@{drsDocket.bookingDate}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_docket_no"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="@dimen/size_2dp"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="@dimen/text_10sp"
+                        tools:text="Jan 25, 2019" />
+
+                </RelativeLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_delivery_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/size_8dp"
+                    android:layout_toStartOf="@id/tv_payment_type"
+                    android:background="@drawable/shape_rounded_square_red"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="@{drsDocket.deliveryStatusName.toUpperCase()}"
+                    android:textAppearance="@style/TextStyleBold"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/text_8sp"
+                    tools:text="DELIVERED" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_payment_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/size_8dp"
+                    android:layout_toStartOf="@id/iv_customer_type"
+                    android:background="@drawable/shape_rounded_square_red"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="@{drsDocket.paymentType}"
+                    android:textAppearance="@style/TextStyleBold"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/text_8sp"
+                    tools:text="PAID" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_customer_type"
+                    android:layout_width="@dimen/size_30dp"
+                    android:layout_height="@dimen/size_30dp"
+                    android:layout_alignWithParentIfMissing="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/size_10dp"
+                    android:layout_toStartOf="@id/iv_dispatch_mode"
+                    android:contentDescription="@string/image_description"
+                    android:padding="@dimen/size_4dp"
+                    android:src="@drawable/ic_customer_retail"
+                    android:tint="@color/colorTextDark" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_dispatch_mode"
+                    android:layout_width="@dimen/size_30dp"
+                    android:layout_height="@dimen/size_30dp"
+                    android:layout_alignWithParentIfMissing="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/size_4dp"
+                    android:layout_toStartOf="@id/iv_action"
+                    android:contentDescription="@string/image_description"
+                    android:padding="@dimen/size_4dp"
+                    android:src="@drawable/ic_mode_air"
+                    android:tint="@color/colorTextDark" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_action"
+                    android:layout_width="@dimen/size_35dp"
+                    android:layout_height="@dimen/size_35dp"
+                    android:layout_alignWithParentIfMissing="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/size_4dp"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/image_description"
+                    android:padding="@dimen/size_8dp"
+                    android:src="@drawable/ic_more_vertical"
+                    android:tint="@color/colorTextDark" />
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/container_section_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/container_section_1"
+                android:layout_marginTop="@dimen/size_10dp"
+                android:baselineAligned="false"
+                android:gravity="center_vertical"
+                android:weightSum="10">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_origin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="2"
+                        android:text="@{AppUtils.convertToUpperCase(drsDocket.source)}"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextDark"
+                        android:textSize="@dimen/text_14sp"
+                        tools:text="Ahmedabad, Gujarat" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_consignor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_origin"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="@dimen/size_2dp"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="3"
+                        android:text="@{AppUtils.convertToUpperCase(drsDocket.consignorName)}"
+                        android:textAppearance="@style/TextStyleBold"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="@dimen/text_12sp"
+                        tools:text="Mr. Mohandas Gandhi" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_8dp"
+                    android:layout_marginEnd="@dimen/size_8dp"
+                    android:layout_weight="2"
+                    android:gravity="center_horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_transit"
+                        android:layout_width="@dimen/size_45dp"
+                        android:layout_height="@dimen/size_45dp"
+                        android:contentDescription="@string/image_description"
+                        android:padding="@dimen/size_8dp"
+                        android:src="@drawable/ic_delivery_van"
+                        android:tint="@color/colorTextDark" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_destination"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="2"
+                        android:text="@{AppUtils.convertToUpperCase(drsDocket.destination)}"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextDark"
+                        android:textSize="@dimen/text_14sp"
+                        tools:text="Karnataka, Bangalore" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_consignee"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_destination"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="@dimen/size_2dp"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="3"
+                        android:text="@{AppUtils.convertToUpperCase(drsDocket.consigneeName)}"
+                        android:textAppearance="@style/TextStyleBold"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="@dimen/text_12sp"
+                        tools:text="Mr. John Martin" />
+
+                </RelativeLayout>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/container_section_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/container_section_2"
+                android:layout_marginTop="@dimen/size_10dp"
+                android:baselineAligned="false"
+                android:gravity="center_vertical"
+                android:weightSum="12">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_boxes"
+                        android:layout_width="@dimen/size_18dp"
+                        android:layout_height="@dimen/size_18dp"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@string/image_description"
+                        android:src="@drawable/ic_boxes"
+                        android:tint="@color/colorTextDark" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_no_of_boxes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/size_6dp"
+                        android:layout_marginTop="@dimen/size_2dp"
+                        android:layout_toEndOf="@+id/iv_boxes"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text="@{drsDocket.noOfPackages}"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="@dimen/text_12sp"
+                        tools:text="10" />
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/view_separator_1"
+                    android:layout_width="2.5dp"
+                    android:layout_height="@dimen/size_25dp"
+                    android:layout_marginStart="@dimen/size_6dp"
+                    android:background="@color/colorDivider" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_6dp"
+                    android:layout_weight="3"
+                    android:gravity="center_vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_actual_weight"
+                        android:layout_width="@dimen/size_18dp"
+                        android:layout_height="@dimen/size_18dp"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@string/image_description"
+                        android:src="@drawable/ic_weight"
+                        android:tint="@color/colorTextDark" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_actual_weight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/size_6dp"
+                        android:layout_marginTop="@dimen/size_2dp"
+                        android:layout_toEndOf="@+id/iv_actual_weight"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text="@{drsDocket.actualWeight}"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="@dimen/text_12sp"
+                        tools:text="10.5 KG" />
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/view_separator_2"
+                    android:layout_width="2.5dp"
+                    android:layout_height="@dimen/size_25dp"
+                    android:layout_marginStart="@dimen/size_6dp"
+                    android:background="@color/colorDivider" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_6dp"
+                    android:layout_weight="3"
+                    android:gravity="center_vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_chargeable_weight"
+                        android:layout_width="@dimen/size_18dp"
+                        android:layout_height="@dimen/size_18dp"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@string/image_description"
+                        android:src="@drawable/ic_weight_balance"
+                        android:tint="@color/colorTextDark" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_chargeable_weight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/size_6dp"
+                        android:layout_marginTop="@dimen/size_2dp"
+                        android:layout_toEndOf="@+id/iv_chargeable_weight"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text="@{drsDocket.chargeWeight}"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="@dimen/text_12sp"
+                        tools:text="12 KG" />
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/view_separator_3"
+                    android:layout_width="2.5dp"
+                    android:layout_height="@dimen/size_25dp"
+                    android:layout_marginStart="@dimen/size_6dp"
+                    android:background="@color/colorDivider" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_6dp"
+                    android:layout_weight="4"
+                    android:gravity="center_vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_amount"
+                        android:layout_width="@dimen/size_18dp"
+                        android:layout_height="@dimen/size_18dp"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@string/image_description"
+                        android:src="@drawable/ic_wallet"
+                        android:tint="@color/colorTextDark" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_freight_amount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/size_6dp"
+                        android:layout_marginTop="@dimen/size_2dp"
+                        android:layout_toEndOf="@+id/iv_amount"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text="@{drsDocket.totalAmount}"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="@dimen/text_12sp"
+                        tools:text="14,575" />
+
+                </RelativeLayout>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/container_section_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/container_section_3"
+                android:layout_marginTop="@dimen/size_12dp"
+                android:baselineAligned="false"
+                android:gravity="center_vertical">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text="Collected Amount"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="@dimen/text_10sp"
+                        tools:ignore="HardcodedText" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_collected_amount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/size_2dp"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="3"
+                        android:text="@{drsDocket.collectedAmount??`0`}"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextDark"
+                        android:textSize="@dimen/text_12sp"
+                        tools:text="15,000" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_4dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text="TDS Amount"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="@dimen/text_10sp"
+                        tools:ignore="HardcodedText" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_tds_amount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/size_2dp"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="3"
+                        android:text="@{drsDocket.tDSAmount??`0`}"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextDark"
+                        android:textSize="@dimen/text_12sp"
+                        tools:text="1250" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_4dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text="Invoice Amount"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="@dimen/text_10sp"
+                        tools:ignore="HardcodedText" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_amount_status"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/size_2dp"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="3"
+                        android:text="@{drsDocket.invoiceValue??`0`}"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextDark"
+                        android:textSize="@dimen/text_12sp"
+                        tools:text="1520" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_4dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text="Balance Amount"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="@dimen/text_10sp"
+                        tools:ignore="HardcodedText" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_balance_amount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/size_2dp"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="3"
+                        android:text="@{drsDocket.balanceAmount??`0`}"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextDark"
+                        android:textSize="@dimen/text_12sp"
+                        tools:text="250" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <!--<androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_4dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text="Amount Status"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="@dimen/text_10sp"
+                        tools:ignore="HardcodedText" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_amount_status"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/size_2dp"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="3"
+                        android:text="@{drsDocket.amountStatus.toUpperCase()}"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextDark"
+                        android:textSize="@dimen/text_12sp"
+                        tools:text="PAID" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>-->
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/container_section_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/container_section_4"
+                android:layout_marginTop="@dimen/size_8dp"
+                android:baselineAligned="false"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="Undelivered Reason"
+                    android:textAppearance="@style/TextStyleSemiBold"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="@dimen/text_10sp"
+                    tools:ignore="HardcodedText" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_undelivered_reason"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_2dp"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:maxLines="3"
+                    android:text="@{drsDocket.reasonName}"
+                    android:textAppearance="@style/TextStyleSemiBold"
+                    android:textColor="@color/colorTextDark"
+                    android:textSize="@dimen/text_12sp"
+                    tools:text="Customer address is wrong" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

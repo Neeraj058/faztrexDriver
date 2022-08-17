@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/size_10dp"
+                    app:cardCornerRadius="@dimen/size_2dp"
+                    app:cardElevation="@dimen/size_4dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:paddingBottom="@dimen/size_4dp">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/size_3dp"
+                            android:background="@color/colorThemeRed" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/iv_logo_1"
+                            android:layout_width="@dimen/size_45dp"
+                            android:layout_height="@dimen/size_45dp"
+                            android:layout_marginStart="@dimen/size_15dp"
+                            android:layout_marginTop="@dimen/size_20dp"
+                            android:background="@drawable/shape_round"
+                            android:backgroundTint="@color/colorPrimary"
+                            android:contentDescription="@string/image_description"
+                            android:padding="@dimen/size_12dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_hub"
+                            android:tint="@color/colorWhite" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_dashboard_title_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/size_12dp"
+                            android:layout_marginTop="@dimen/size_30dp"
+                            android:layout_toEndOf="@id/iv_logo_1"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:text="Total DRSs"
+                            android:textAppearance="@style/TextStyleSemiBold"
+                            android:textColor="@color/colorTextPrimary"
+                            android:textSize="@dimen/text_14sp"
+                            tools:ignore="HardcodedText" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_dashboard_value_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/iv_logo_1"
+                            android:layout_marginStart="@dimen/size_25dp"
+                            android:layout_marginTop="@dimen/size_10dp"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:textAppearance="@style/TextStyleSemiBold"
+                            android:text="0.00"
+                            tools:text="-"
+                            android:textColor="@color/colorTextPrimary"
+                            android:textSize="@dimen/text_24sp"
+                            tools:ignore="HardcodedText" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/size_10dp"
+                    app:cardCornerRadius="@dimen/size_2dp"
+                    app:cardElevation="@dimen/size_4dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:paddingBottom="@dimen/size_4dp">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/size_3dp"
+                            android:background="@color/colorThemeRed" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/iv_logo_3"
+                            android:layout_width="@dimen/size_45dp"
+                            android:layout_height="@dimen/size_45dp"
+                            android:layout_marginStart="@dimen/size_15dp"
+                            android:layout_marginTop="@dimen/size_20dp"
+                            android:background="@drawable/shape_round"
+                            android:backgroundTint="@color/colorPrimary"
+                            android:contentDescription="@string/image_description"
+                            android:padding="@dimen/size_12dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_hub"
+                            android:tint="@color/colorWhite" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_dashboard_title_3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/size_12dp"
+                            android:layout_marginTop="@dimen/size_30dp"
+                            android:layout_toEndOf="@id/iv_logo_3"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:text="Total Hyper Local Requests"
+                            android:textAppearance="@style/TextStyleSemiBold"
+                            android:textColor="@color/colorTextPrimary"
+                            android:textSize="@dimen/text_14sp"
+                            tools:ignore="HardcodedText" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_dashboard_value_3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/iv_logo_3"
+                            android:layout_marginStart="@dimen/size_25dp"
+                            android:layout_marginTop="@dimen/size_10dp"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:text="0.00"
+                            tools:text="-"
+                            android:textAppearance="@style/TextStyleSemiBold"
+                            android:textColor="@color/colorTextPrimary"
+                            android:textSize="@dimen/text_24sp"
+                            tools:ignore="HardcodedText" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/size_10dp"
+                    app:cardCornerRadius="@dimen/size_2dp"
+                    app:cardElevation="@dimen/size_4dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:paddingBottom="@dimen/size_4dp">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/size_3dp"
+                            android:background="@color/colorThemeRed" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/iv_logo_4"
+                            android:layout_width="@dimen/size_45dp"
+                            android:layout_height="@dimen/size_45dp"
+                            android:layout_marginStart="@dimen/size_15dp"
+                            android:layout_marginTop="@dimen/size_20dp"
+                            android:background="@drawable/shape_round"
+                            android:backgroundTint="@color/colorPrimary"
+                            android:contentDescription="@string/image_description"
+                            android:padding="@dimen/size_12dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_calendar"
+                            android:tint="@color/colorWhite" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_dashboard_title_4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/size_12dp"
+                            android:layout_marginTop="@dimen/size_30dp"
+                            android:layout_toEndOf="@id/iv_logo_4"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:text="Total Dockets"
+                            android:textAppearance="@style/TextStyleSemiBold"
+                            android:textColor="@color/colorTextPrimary"
+                            android:textSize="@dimen/text_14sp"
+                            tools:ignore="HardcodedText" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_dashboard_value_4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/iv_logo_4"
+                            android:layout_marginStart="@dimen/size_25dp"
+                            android:layout_marginTop="@dimen/size_10dp"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:text="0.00"
+                            tools:text="-"
+                            android:textAppearance="@style/TextStyleSemiBold"
+                            android:textColor="@color/colorTextPrimary"
+                            android:textSize="@dimen/text_24sp"
+                            tools:ignore="HardcodedText" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </ScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</layout>
+

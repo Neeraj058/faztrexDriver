@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <View
+            android:layout_width="2.5dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/size_10dp"
+            android:layout_marginEnd="@dimen/size_10dp"
+            android:background="@color/colorPrimary"
+            android:elevation="0dp" />
+
+        <View
+            android:layout_width="@dimen/size_15dp"
+            android:layout_height="@dimen/size_15dp"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/size_6dp"
+            android:background="@drawable/shape_circle_filled"
+            android:elevation="0dp" />
+
+    </RelativeLayout>
+
+</layout>

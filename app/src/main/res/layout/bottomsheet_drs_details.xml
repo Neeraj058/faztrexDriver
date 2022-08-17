@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.courier365cloud.faztrex.utils.AppUtils" />
+
+        <variable
+            name="drsDetail"
+            type="com.courier365cloud.faztrex.network.model.response.drs.DrsDetail" />
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/bottom_sheet_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="@dimen/size_40dp"
+        android:background="@drawable/shape_rounded_square_white"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <View
+            android:id="@+id/view_separator"
+            android:layout_width="@dimen/size_70dp"
+            android:layout_height="@dimen/size_4dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/size_15dp"
+            android:background="@drawable/shape_rounded_square_gray"
+            android:backgroundTint="@color/colorGreyShade2" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view_separator"
+            android:layout_marginTop="@dimen/size_20dp"
+            android:padding="@dimen/size_8dp">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/container_section_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:gravity="center_vertical"
+                android:baselineAligned="false">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="@dimen/text_10sp"
+                        android:text="DRS Created By" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_drs_created_by"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="@dimen/size_4dp"
+                        android:maxLines="3"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="@dimen/text_13sp"
+                        android:text="@{AppUtils.convertToUpperCase(drsDetail.drsCreatedByUser)}"
+                        tools:text="Jayesh Parikar" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_drs_created_by_datetime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="@dimen/size_2dp"
+                        android:maxLines="3"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextDark"
+                        android:textSize="@dimen/text_10sp"
+                        convertLongDateFormat="@{drsDetail.drsCreatedDate}"
+                        tools:text="January 28, 2019 07:35 PM" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="@dimen/size_50dp"
+                    android:layout_marginStart="@dimen/size_6dp"
+                    android:layout_marginEnd="@dimen/size_6dp"
+                    android:background="@color/colorDivider" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="@dimen/text_10sp"
+                        android:text="DRS Closed By" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_drs_closed_by"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="@dimen/size_4dp"
+                        android:maxLines="3"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="@dimen/text_13sp"
+                        android:text="@{AppUtils.convertToUpperCase(drsDetail.drsClosedByUser)}"
+                        tools:text="Vishal Ahire" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_drs_closed_by_datetime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="@dimen/size_2dp"
+                        android:maxLines="3"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextDark"
+                        android:textSize="@dimen/text_10sp"
+                        convertLongDateFormat="@{drsDetail.drsClosedDate}"
+                        tools:text="January 30, 2019 02:08 PM" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/container_section_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:gravity="center_vertical"
+                android:layout_below="@id/container_section_1"
+                android:layout_marginTop="@dimen/size_15dp"
+                android:baselineAligned="false">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.33"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="3"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="@dimen/text_10sp"
+                        android:text="Total Collected Amount" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_total_collected_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="@dimen/size_2dp"
+                        android:maxLines="2"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="@dimen/text_13sp"
+                        android:text="@{drsDetail.totalCollectedAmount}"
+                        tools:text="1,50,000" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="@dimen/size_35dp"
+                    android:layout_marginStart="@dimen/size_6dp"
+                    android:layout_marginEnd="@dimen/size_6dp"
+                    android:background="@color/colorDivider" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.33"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="3"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="@dimen/text_10sp"
+                        android:text="Total TDS Amount" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_total_tds_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="@dimen/size_2dp"
+                        android:maxLines="2"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="@dimen/text_13sp"
+                        android:text="@{drsDetail.totalTdsAmount}"
+                        tools:text="1,35,000" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="@dimen/size_35dp"
+                    android:layout_marginStart="@dimen/size_6dp"
+                    android:layout_marginEnd="@dimen/size_6dp"
+                    android:background="@color/colorDivider" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="0.33"
+                    android:gravity="center_vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="3"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="@dimen/text_10sp"
+                        android:text="Total Balance Amount" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_total_balance_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="@dimen/size_2dp"
+                        android:maxLines="2"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="@dimen/text_13sp"
+                        android:text="@{drsDetail.totalBalanceAmount}"
+                        tools:text="15,000" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/container_section_2"
+                android:layout_marginTop="@dimen/size_15dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_title_total_freight_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@+id/tv_total_freight_amount"
+                    android:layout_marginEnd="@dimen/size_10dp"
+                    android:maxLines="1"
+                    android:textAppearance="@style/TextStyleSemiBold"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="@dimen/text_13sp"
+                    android:text="Total Freight Amount" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_total_freight_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:maxLines="1"
+                    android:textAppearance="@style/TextStyleBold"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="@dimen/text_16sp"
+                    android:text="@{drsDetail.totalAmount}"
+                    tools:text="1,35,000" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>

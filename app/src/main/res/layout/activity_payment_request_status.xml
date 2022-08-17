@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        tools:context=".ui.activity.transaction.drs.PaymentRequestStatusActivity">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieProgress"
+            android:layout_width="@dimen/size_250dp"
+            android:layout_height="@dimen/size_250dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/size_20dp"
+            android:padding="@dimen/size_20dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/progress" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvMessage"
+            style="@style/TextStyleSemiBold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lottieProgress"
+            android:gravity="center"
+            android:padding="@dimen/size_20dp"
+            android:text="Payment Request {requestNo} has been initiated against of {amount} Rs.\n\nWaiting for confirmation."
+            android:textSize="@dimen/text_20sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnUploadPod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:insetLeft="0dp"
+            android:insetTop="0dp"
+            android:insetRight="0dp"
+            android:insetBottom="0dp"
+            android:text="Upload POD"
+            android:textAppearance="@style/TextStyleSemiBold"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_18sp"
+            app:backgroundTint="@color/colorPrimaryDark"
+            app:cornerRadius="0dp"
+            android:visibility="gone"
+            app:rippleColor="@color/colorAccent" />
+
+    </RelativeLayout>
+
+</layout>

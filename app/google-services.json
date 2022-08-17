@@ -1,0 +1,114 @@
+{
+  "project_info": {
+    "project_number": "327456310884",
+    "firebase_url": "https://insurance-bb10b.firebaseio.com",
+    "project_id": "insurance-bb10b",
+    "storage_bucket": "insurance-bb10b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:327456310884:android:953177ff6980cc4d",
+        "android_client_info": {
+          "package_name": "app.citta.insurance.agent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "327456310884-bm965e2s0gt62c3iuqrelbv8v74845u0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_IZubyRunaYHnTJoC2ygwv_XEwTsWyd8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "327456310884-bm965e2s0gt62c3iuqrelbv8v74845u0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:327456310884:android:bcb1dd3aaeea71c4418171",
+        "android_client_info": {
+          "package_name": "com.courier365cloud.faztrex"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "327456310884-4lurjqiecfd1mjq9popgnps7mmc7svpr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.courier365cloud.faztrex",
+            "certificate_hash": "6bd5cdcbd2d6dfab21819c190348b695f7a51a2c"
+          }
+        },
+        {
+          "client_id": "327456310884-bm965e2s0gt62c3iuqrelbv8v74845u0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_IZubyRunaYHnTJoC2ygwv_XEwTsWyd8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "327456310884-bm965e2s0gt62c3iuqrelbv8v74845u0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:327456310884:android:385150c58d8c16cc418171",
+        "android_client_info": {
+          "package_name": "com.faztrex.customer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "327456310884-pddmi1gqfm1ah6t8ssn374jar63capq1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.faztrex.customer",
+            "certificate_hash": "6bd5cdcbd2d6dfab21819c190348b695f7a51a2c"
+          }
+        },
+        {
+          "client_id": "327456310884-bm965e2s0gt62c3iuqrelbv8v74845u0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_IZubyRunaYHnTJoC2ygwv_XEwTsWyd8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "327456310884-bm965e2s0gt62c3iuqrelbv8v74845u0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

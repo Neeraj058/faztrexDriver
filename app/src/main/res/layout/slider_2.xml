@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorLightWhite">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_slider_image"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/size_80dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_slider_2"
+        android:contentDescription="@string/image_description" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_slider_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_slider_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/size_20dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:paddingStart="@dimen/size_10dp"
+        android:paddingEnd="@dimen/size_10dp"
+        android:text="Slider Title 2"
+        android:textAppearance="@style/TextStyleSemiBold"
+        android:textColor="@color/colorTextDark"
+        android:textSize="@dimen/text_24sp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_slider_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_slider_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/size_10dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:lineSpacingExtra="@dimen/size_3dp"
+        android:maxLines="8"
+        android:paddingStart="@dimen/size_20dp"
+        android:paddingEnd="@dimen/size_20dp"
+        android:text="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."
+        android:textAppearance="@style/TextStyleNormal"
+        android:textColor="@color/colorTextDarkGrey"
+        android:textSize="@dimen/text_14sp" />
+
+
+</RelativeLayout>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:paddingBottom="@dimen/size_10dp">
+
+        <RelativeLayout
+            android:id="@+id/rv_header_container"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_55dp"
+            android:background="@color/colorAccent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_header_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/size_45dp"
+                android:paddingTop="@dimen/size_8dp"
+                android:paddingBottom="@dimen/size_8dp"
+                android:text="Digital Signature"
+                android:textAppearance="@style/TextStyleSemiBold"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/text_18sp" />
+
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title_closed_by"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rv_header_container"
+            android:gravity="center_vertical"
+            android:text="Closed by"
+            android:textAppearance="@style/TextStyleNormal"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/text_12sp"
+            tools:ignore="HardcodedText" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spinner_drs_closed_by"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_title_closed_by"
+            android:layout_marginTop="@dimen/size_6dp"
+            android:backgroundTint="@color/colorDivider"
+            android:spinnerMode="dialog" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/spinner_drs_closed_by"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="90">
+
+                <com.github.gcacace.signaturepad.views.SignaturePad
+                    android:id="@+id/signature_pad"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:penColor="@android:color/black" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvClearDigitalSignature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="@dimen/size_10dp"
+                    android:text="Clear Pad"
+                    android:textColor="@color/colorTextDarkGrey"
+                    android:textSize="@dimen/text_15sp"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_close_drs"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/size_15dp"
+                android:layout_marginTop="@dimen/size_30dp"
+                android:layout_marginEnd="@dimen/size_15dp"
+                android:layout_weight="10"
+                android:gravity="center"
+                android:text="Close DRS"
+                android:textAllCaps="false"
+                android:textAppearance="@style/TextStyleSemiBold"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/text_16sp"
+                app:cornerRadius="@dimen/size_4dp"
+                app:rippleColor="@color/colorAccent"
+                tools:targetApi="lollipop" />
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</layout>
+

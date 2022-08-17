@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        tools:context=".ui.activity.transaction.drs.PaymentRequestActivity">
+
+        <RelativeLayout
+            android:id="@+id/headerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@color/colorAccent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextStyleBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/size_10dp"
+                android:padding="@dimen/size_10dp"
+                android:text="Payment Request"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/text_30sp"
+                tools:ignore="HardcodedText" />
+
+        </RelativeLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvLogo"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@id/headerLayout"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="-50dp"
+            android:layout_marginEnd="20dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="5dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:src="@drawable/mpesa_crop" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/relativeButtom"
+            android:layout_below="@id/cvLogo">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivClipart"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="@dimen/size_20dp"
+                android:alpha="0.8"
+                android:src="@drawable/wallet_aym" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivRupee"
+                android:layout_width="@dimen/size_20dp"
+                android:layout_height="@dimen/size_20dp"
+                android:layout_below="@+id/ivClipart"
+                android:layout_marginTop="@dimen/size_15dp"
+                android:layout_marginEnd="-20dp"
+                android:layout_toStartOf="@+id/edtAmt"
+                android:alpha="0.8"
+                android:src="@drawable/rupee_indian"
+                android:visibility="visible"
+                app:tint="#A4000000" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edtAmt"
+                style="@style/TextStyleBold"
+                android:layout_width="@dimen/size_250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ivClipart"
+                android:layout_centerHorizontal="true"
+                android:background="@null"
+                android:gravity="center"
+                android:hint="Enter Amount"
+                android:inputType="numberDecimal"
+                android:textColor="#A4000000"
+                android:textColorHint="#74FFFFFF"
+                android:textSize="45sp"
+                tools:ignore="HardcodedText"
+                tools:text="50000.00" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeButtom"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp"
+            android:background="@drawable/bg_rounded">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edtMPesaId"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@id/btnRequest"
+                android:background="@null"
+                android:hint="Enter M Pesa ID"
+                android:inputType="numberDecimal"
+                android:padding="10dp"
+                android:text="254708374149"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#DDFFFFFF"
+                tools:ignore="HardcodedText"
+                tools:text="+91 8238345247" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRequest"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:backgroundTint="#36b649"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                android:text="Request Now"
+                android:textAllCaps="false"
+                app:cornerRadius="10dp"
+                app:strokeColor="@color/colorWhite"
+                app:strokeWidth="0dp"
+                tools:ignore="HardcodedText" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>

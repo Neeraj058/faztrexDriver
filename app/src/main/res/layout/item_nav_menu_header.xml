@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_50dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_header_icon"
+            android:layout_width="@dimen/size_20dp"
+            android:layout_height="@dimen/size_20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/size_20dp"
+            android:contentDescription="@string/image_description"
+            android:padding="@dimen/size_2dp"
+            android:src="@drawable/ic_dashboard"
+            android:tint="@color/colorTextPrimary" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_header_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/size_10dp"
+            android:layout_toStartOf="@id/iv_arrow_expand_menu"
+            android:layout_toEndOf="@+id/iv_header_icon"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:textAppearance="@style/TextStyleSemiBold"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/text_14sp"
+            tools:text="Dashboard" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_arrow_expand_menu"
+            android:layout_width="@dimen/size_18dp"
+            android:layout_height="@dimen/size_18dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/size_10dp"
+            android:layout_marginEnd="@dimen/size_10dp"
+            android:contentDescription="@string/image_description"
+            android:src="@drawable/ic_arrow_expand" />
+
+    </RelativeLayout>
+
+</layout>

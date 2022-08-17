@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:elevation="0dp">
+
+            <include
+                android:id="@+id/toolbar_main"
+                layout="@layout/toolbar_main" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <include
+            android:id="@+id/layout_common_list"
+            layout="@layout/layout_common_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_above="@+id/btnSaveItems"
+            android:layout_below="@id/app_bar_layout" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSaveItems"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:insetLeft="0dp"
+            android:insetTop="0dp"
+            android:insetRight="0dp"
+            android:insetBottom="0dp"
+            android:text="Submit"
+            android:textAppearance="@style/TextStyleSemiBold"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_18sp"
+            android:visibility="gone"
+            app:backgroundTint="@color/colorPrimaryDark"
+            app:cornerRadius="0dp"
+            app:rippleColor="@color/colorAccent"
+            tools:ignore="HardcodedText" />
+
+    </RelativeLayout>
+
+</layout>

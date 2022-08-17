@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_change_password"
+        android:orderInCategory="100"
+        android:title="@string/action_change_password"
+        android:titleCondensed="@string/action_change_password"
+        app:actionViewClass="androidx.appcompat.view.menu.ActionMenuItemView"
+        app:showAsAction="never" />
+
+</menu>

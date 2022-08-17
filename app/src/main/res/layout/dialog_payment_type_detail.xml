@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:paddingBottom="@dimen/size_10dp">
+
+        <RelativeLayout
+            android:id="@+id/rv_header_container"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_55dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@color/colorAccent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_header_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/size_45dp"
+                android:paddingTop="@dimen/size_8dp"
+                android:paddingBottom="@dimen/size_8dp"
+                android:text="Add Payment Type"
+                android:textAppearance="@style/TextStyleSemiBold"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/text_18sp"
+                tools:ignore="HardcodedText" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_close"
+                android:layout_width="@dimen/size_45dp"
+                android:layout_height="@dimen/size_45dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/image_description"
+                android:padding="@dimen/size_10dp"
+                android:src="@drawable/ic_close"
+                android:tint="@color/colorWhite" />
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title_payment_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rv_header_container"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/size_8dp"
+            android:layout_marginTop="@dimen/size_8dp"
+            android:layout_marginEnd="@dimen/size_8dp"
+            android:gravity="center_vertical"
+            android:text="Payment Type"
+            android:textAppearance="@style/TextStyleSemiBold"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/text_13sp"
+            tools:ignore="HardcodedText" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spinner_payment_type"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_title_payment_type"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/size_8dp"
+            android:layout_marginTop="@dimen/size_8dp"
+            android:layout_marginEnd="@dimen/size_8dp"
+            android:backgroundTint="@color/colorDivider"
+            android:spinnerMode="dialog" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tnl_amount"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/spinner_payment_type"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/size_8dp"
+            android:layout_marginTop="@dimen/size_8dp"
+            android:layout_marginEnd="@dimen/size_8dp"
+            android:textColorHint="@color/colorTextHint">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorDivider"
+                android:hint="Amount"
+                android:imeOptions="actionNext"
+                android:inputType="numberDecimal"
+                android:maxLength="10"
+                android:maxLines="1"
+                android:nextFocusDown="@id/tnl_width"
+                android:textAppearance="@style/TextStyleSemiBold"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/text_13sp"
+                tools:ignore="HardcodedText" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tnl_remarks"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_70dp"
+            android:layout_below="@+id/tnl_amount"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/size_8dp"
+            android:layout_marginTop="@dimen/size_8dp"
+            android:layout_marginEnd="@dimen/size_8dp"
+            android:textColorHint="@color/colorTextHint">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/colorDivider"
+                android:gravity="top"
+                android:hint="Remarks"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:maxLength="300"
+                android:maxLines="4"
+                android:nextFocusDown="@id/tnl_height"
+                android:textAppearance="@style/TextStyleSemiBold"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/text_13sp"
+                tools:ignore="HardcodedText" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <RelativeLayout
+            android:id="@+id/bankDiv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tnl_remarks"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/size_8dp"
+            android:layout_marginTop="@dimen/size_8dp"
+            android:layout_marginEnd="@dimen/size_8dp"
+            android:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_title_bank"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_vertical"
+                android:text="Bank"
+                android:textAppearance="@style/TextStyleSemiBold"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/text_13sp"
+                tools:ignore="HardcodedText" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinner_bank"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_title_bank"
+                android:layout_centerHorizontal="true"
+                android:backgroundTint="@color/colorDivider"
+                android:spinnerMode="dialog" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/lv_sub_container_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/spinner_bank"
+                android:layout_centerHorizontal="true"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tnl_ref_no"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColorHint="@color/colorTextHint">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/colorDivider"
+                        android:hint="Ref/Cheque No."
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLength="100"
+                        android:maxLines="1"
+                        android:nextFocusDown="@id/tnl_width"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="@dimen/text_13sp"
+                        tools:ignore="HardcodedText" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tnl_ref_date"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_6dp"
+                    android:layout_weight="1"
+                    android:textColorHint="@color/colorTextHint">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtRefDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/colorDivider"
+                        android:clickable="true"
+                        android:drawableStart="@drawable/ic_custom_calendar"
+                        android:drawablePadding="@dimen/size_6dp"
+                        android:drawableTint="@color/colorTextDarkGrey"
+                        android:focusable="true"
+                        android:focusableInTouchMode="false"
+                        android:hint="Ref/Cheque Date"
+                        android:imeOptions="actionNext"
+                        android:longClickable="false"
+                        android:maxLength="10"
+                        android:maxLines="1"
+                        android:nextFocusDown="@id/tnl_height"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="@dimen/text_13sp"
+                        tools:ignore="HardcodedText,UnusedAttribute" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </RelativeLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tnl_payee"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bankDiv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/size_8dp"
+            android:layout_marginTop="@dimen/size_8dp"
+            android:layout_marginEnd="@dimen/size_8dp"
+            android:textColorHint="@color/colorTextHint">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorDivider"
+                android:hint="Payee Details"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName"
+                android:maxLength="500"
+                android:maxLines="1"
+                android:nextFocusDown="@id/tnl_width"
+                android:textAppearance="@style/TextStyleSemiBold"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/text_13sp"
+                tools:ignore="HardcodedText" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeBottom"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/tnl_payee"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/size_10dp"
+            android:layout_marginTop="@dimen/size_10dp"
+            android:layout_marginEnd="@dimen/size_10dp"
+            android:background="@drawable/bg_rounded"
+            android:visibility="gone">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edtMPesaId"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@id/btnRequest"
+                android:background="@null"
+                android:hint="Enter M Pesa ID"
+                android:inputType="numberDecimal"
+                android:padding="10dp"
+                android:text="254708374149"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#DDFFFFFF"
+                tools:ignore="HardcodedText"
+                tools:text="+91 8238345247" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRequest"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:backgroundTint="#36b649"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                android:text="Request Now"
+                android:textAllCaps="false"
+                app:cornerRadius="10dp"
+                app:strokeColor="@color/colorWhite"
+                app:strokeWidth="0dp"
+                tools:ignore="HardcodedText" />
+
+        </RelativeLayout>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieProgress"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_100dp"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_below="@+id/relativeBottom"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/size_10dp"
+            android:layout_marginTop="@dimen/size_10dp"
+            android:visibility="gone"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/progress" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_submit"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_60dp"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_below="@id/lottieProgress"
+            android:layout_margin="@dimen/size_10dp"
+            android:gravity="center"
+            android:text="Save"
+            android:textAllCaps="false"
+            android:textAppearance="@style/TextStyleSemiBold"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_18sp"
+            app:backgroundTint="@color/colorPrimaryDark"
+            app:cornerRadius="@dimen/size_4dp"
+            app:rippleColor="@color/colorAccent"
+            tools:ignore="HardcodedText"
+            tools:targetApi="lollipop" />
+
+    </RelativeLayout>
+
+</layout>

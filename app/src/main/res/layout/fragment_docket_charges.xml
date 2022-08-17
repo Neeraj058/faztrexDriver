@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAppBackGround">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_dimension_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/size_8dp"
+                app:cardCornerRadius="@dimen/size_4dp"
+                app:cardElevation="@dimen/size_2dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/size_10dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_title_charges_details"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Charges Details"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="@dimen/text_18sp" />
+
+                    <View
+                        android:id="@+id/view_separator_charges_details"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/separator_height"
+                        android:layout_below="@+id/tv_title_charges_details"
+                        android:layout_marginTop="@dimen/size_8dp"
+                        android:layout_marginBottom="@dimen/size_8dp"
+                        android:background="@color/colorTextDarkGrey" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_basic_charge_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="3"
+                        android:layout_toStartOf="@+id/tv_basic_charge"
+                        android:layout_below="@+id/view_separator_charges_details"
+                        android:text="Basic Charge"
+                        android:textAppearance="@style/TextStyleNormal"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_basic_charge"
+                        android:layout_width="@dimen/size_150dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:layout_alignParentEnd="true"
+                        android:gravity="end"
+                        android:layout_marginStart="@dimen/size_4dp"
+                        android:layout_below="@+id/view_separator_charges_details"
+                        android:text="0.00"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextDark"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_value_surcharge_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="3"
+                        android:layout_toStartOf="@+id/tv_value_surcharge"
+                        android:layout_below="@+id/tv_basic_charge_title"
+                        android:text="Value Surcharge"
+                        android:layout_marginTop="@dimen/size_10dp"
+                        android:textAppearance="@style/TextStyleNormal"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_value_surcharge"
+                        android:layout_width="@dimen/size_150dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:gravity="end"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="@dimen/size_4dp"
+                        android:layout_below="@+id/tv_basic_charge_title"
+                        android:layout_marginTop="@dimen/size_10dp"
+                        android:text="0.00"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextDark"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_docket_charge_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:layout_toStartOf="@id/tv_docket_charge"
+                        android:maxLines="3"
+                        android:layout_below="@+id/tv_value_surcharge_title"
+                        android:text="Docket Charge"
+                        android:layout_marginTop="@dimen/size_10dp"
+                        android:textAppearance="@style/TextStyleNormal"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_docket_charge"
+                        android:layout_width="@dimen/size_150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:gravity="end"
+                        android:layout_marginStart="@dimen/size_4dp"
+                        android:layout_below="@+id/tv_value_surcharge_title"
+                        android:layout_marginTop="@dimen/size_10dp"
+                        android:text="0.00"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextDark"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_green_tax_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toStartOf="@id/tv_green_tax"
+                        android:ellipsize="end"
+                        android:maxLines="3"
+                        android:layout_below="@+id/tv_docket_charge_title"
+                        android:text="Green Tax (For Delhi, Noida &amp; Ghaziabad)"
+                        android:layout_marginTop="@dimen/size_10dp"
+                        android:textAppearance="@style/TextStyleNormal"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_green_tax"
+                        android:layout_width="@dimen/size_150dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:layout_alignParentEnd="true"
+                        android:maxLines="1"
+                        android:gravity="end"
+                        android:layout_marginStart="@dimen/size_4dp"
+                        android:layout_below="@+id/tv_docket_charge_title"
+                        android:layout_marginTop="@dimen/size_10dp"
+                        android:text="0.00"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextDark"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_delivery_charge_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="3"
+                        android:layout_toStartOf="@id/tv_delivery_charge"
+                        android:layout_below="@+id/tv_green_tax_title"
+                        android:text="DOD / COD, Hub Delivery, DACC Charges"
+                        android:layout_marginTop="@dimen/size_10dp"
+                        android:textAppearance="@style/TextStyleNormal"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_delivery_charge"
+                        android:layout_width="@dimen/size_150dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:layout_alignParentEnd="true"
+                        android:gravity="end"
+                        android:layout_marginStart="@dimen/size_4dp"
+                        android:layout_below="@+id/tv_green_tax_title"
+                        android:layout_marginTop="@dimen/size_10dp"
+                        android:text="0.00"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextDark"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_oda_charge_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:layout_toStartOf="@+id/tv_oda_charge"
+                        android:maxLines="3"
+                        android:layout_below="@+id/tv_delivery_charge_title"
+                        android:text="ODA Delivery Charges"
+                        android:layout_marginTop="@dimen/size_10dp"
+                        android:textAppearance="@style/TextStyleNormal"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_oda_charge"
+                        android:layout_width="@dimen/size_150dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:layout_alignParentEnd="true"
+                        android:gravity="end"
+                        android:layout_marginStart="@dimen/size_4dp"
+                        android:layout_below="@+id/tv_delivery_charge_title"
+                        android:layout_marginTop="@dimen/size_10dp"
+                        android:text="0.00"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextDark"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_to_pay_charges_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:layout_toStartOf="@+id/tv_to_pay_charges"
+                        android:maxLines="3"
+                        android:layout_below="@+id/tv_oda_charge_title"
+                        android:text="To Pay Charges"
+                        android:layout_marginTop="@dimen/size_10dp"
+                        android:textAppearance="@style/TextStyleNormal"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_to_pay_charges"
+                        android:layout_width="@dimen/size_150dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:gravity="end"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="@dimen/size_4dp"
+                        android:layout_below="@+id/tv_oda_charge_title"
+                        android:layout_marginTop="@dimen/size_10dp"
+                        android:text="0.00"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextDark"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_package_handling_charges_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:layout_toStartOf="@+id/tv_package_handling_charges"
+                        android:maxLines="3"
+                        android:layout_below="@+id/tv_to_pay_charges_title"
+                        android:text="Package Handling Charges"
+                        android:layout_marginTop="@dimen/size_10dp"
+                        android:textAppearance="@style/TextStyleNormal"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_package_handling_charges"
+                        android:layout_width="@dimen/size_150dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:gravity="end"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="@dimen/size_4dp"
+                        android:layout_below="@+id/tv_to_pay_charges_title"
+                        android:layout_marginTop="@dimen/size_10dp"
+                        android:text="0.00"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextDark"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_hard_copy_charges_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:layout_toStartOf="@+id/tv_hard_copy_charges"
+                        android:maxLines="3"
+                        android:layout_below="@+id/tv_package_handling_charges_title"
+                        android:text="Hard Copy of Docket Charges"
+                        android:layout_marginTop="@dimen/size_10dp"
+                        android:textAppearance="@style/TextStyleNormal"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_hard_copy_charges"
+                        android:layout_width="@dimen/size_150dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:gravity="end"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="@dimen/size_4dp"
+                        android:layout_below="@+id/tv_package_handling_charges_title"
+                        android:layout_marginTop="@dimen/size_10dp"
+                        android:text="0.00"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextDark"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_subtotal_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:layout_toStartOf="@+id/tv_subtotal"
+                        android:maxLines="3"
+                        android:layout_below="@+id/tv_hard_copy_charges_title"
+                        android:text="Subtotal"
+                        android:layout_marginTop="@dimen/size_10dp"
+                        android:textAppearance="@style/TextStyleNormal"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_subtotal"
+                        android:layout_width="@dimen/size_150dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:gravity="end"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="@dimen/size_4dp"
+                        android:layout_below="@+id/tv_hard_copy_charges_title"
+                        android:layout_marginTop="@dimen/size_10dp"
+                        android:text="0.00"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextDark"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_surcharge_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:layout_toStartOf="@+id/tv_surcharge"
+                        android:maxLines="3"
+                        android:layout_below="@+id/tv_subtotal_title"
+                        android:text="Surcharge"
+                        android:layout_marginTop="@dimen/size_10dp"
+                        android:textAppearance="@style/TextStyleNormal"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_surcharge"
+                        android:layout_width="@dimen/size_150dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:gravity="end"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="@dimen/size_4dp"
+                        android:layout_below="@+id/tv_subtotal_title"
+                        android:layout_marginTop="@dimen/size_10dp"
+                        android:text="0.00"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextDark"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_total_freight_amount_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:layout_toStartOf="@+id/tv_total_freight_amount"
+                        android:maxLines="3"
+                        android:layout_below="@+id/tv_surcharge_title"
+                        android:text="Total Freight Amount"
+                        android:layout_marginTop="@dimen/size_10dp"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="@dimen/text_14sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_total_freight_amount"
+                        android:layout_width="@dimen/size_150dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:gravity="end"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="@dimen/size_4dp"
+                        android:layout_below="@+id/tv_surcharge_title"
+                        android:layout_marginTop="@dimen/size_10dp"
+                        android:text="0.00"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextDark"
+                        android:textSize="@dimen/text_14sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_title_tax_details"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Tax Details"
+                        android:layout_marginTop="@dimen/size_24dp"
+                        android:layout_below="@+id/tv_total_freight_amount_title"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="@dimen/text_18sp" />
+
+                    <View
+                        android:id="@+id/view_separator_tax_details"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/separator_height"
+                        android:layout_below="@+id/tv_title_tax_details"
+                        android:layout_marginTop="@dimen/size_8dp"
+                        android:layout_marginBottom="@dimen/size_8dp"
+                        android:background="@color/colorTextDarkGrey" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_tax_header_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:layout_toStartOf="@+id/tv_tax_header_percentage"
+                        android:maxLines="3"
+                        android:layout_below="@+id/view_separator_tax_details"
+                        android:layout_marginTop="@dimen/size_8dp"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_tax_header_percentage"
+                        android:layout_width="@dimen/size_120dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:gravity="end"
+                        android:layout_toStartOf="@+id/tv_tax_header_amount"
+                        android:layout_marginStart="@dimen/size_4dp"
+                        android:layout_below="@+id/view_separator_tax_details"
+                        android:layout_marginTop="@dimen/size_8dp"
+                        android:text="Percentage (%)"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_tax_header_amount"
+                        android:layout_width="@dimen/size_120dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:gravity="end"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="@dimen/size_4dp"
+                        android:layout_below="@+id/view_separator_tax_details"
+                        android:layout_marginTop="@dimen/size_8dp"
+                        android:text="Amount (In Rs.)"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_sgst_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:layout_toStartOf="@+id/tv_sgst_percentage"
+                        android:maxLines="3"
+                        android:text="SGST"
+                        android:layout_below="@+id/tv_tax_header_title"
+                        android:layout_marginTop="@dimen/size_8dp"
+                        android:textAppearance="@style/TextStyleNormal"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_sgst_percentage"
+                        android:layout_width="@dimen/size_120dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:gravity="end"
+                        android:layout_toStartOf="@+id/tv_sgst_amount"
+                        android:layout_marginStart="@dimen/size_4dp"
+                        android:layout_below="@+id/tv_tax_header_title"
+                        android:layout_marginTop="@dimen/size_8dp"
+                        android:text="0"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextDark"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_sgst_amount"
+                        android:layout_width="@dimen/size_120dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:gravity="end"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="@dimen/size_4dp"
+                        android:layout_below="@+id/tv_tax_header_title"
+                        android:layout_marginTop="@dimen/size_8dp"
+                        android:text="0.00"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextDark"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_cgst_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:layout_toStartOf="@+id/tv_cgst_percentage"
+                        android:maxLines="3"
+                        android:text="CGST"
+                        android:layout_below="@+id/tv_sgst_title"
+                        android:layout_marginTop="@dimen/size_8dp"
+                        android:textAppearance="@style/TextStyleNormal"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_cgst_percentage"
+                        android:layout_width="@dimen/size_120dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:gravity="end"
+                        android:layout_toStartOf="@+id/tv_cgst_amount"
+                        android:layout_marginStart="@dimen/size_4dp"
+                        android:layout_below="@+id/tv_sgst_title"
+                        android:layout_marginTop="@dimen/size_8dp"
+                        android:text="0"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextDark"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_cgst_amount"
+                        android:layout_width="@dimen/size_120dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:gravity="end"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="@dimen/size_4dp"
+                        android:layout_below="@+id/tv_sgst_title"
+                        android:layout_marginTop="@dimen/size_8dp"
+                        android:text="0.00"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextDark"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_igst_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:layout_toStartOf="@+id/tv_igst_percentage"
+                        android:maxLines="3"
+                        android:text="IGST"
+                        android:layout_below="@+id/tv_cgst_title"
+                        android:layout_marginTop="@dimen/size_8dp"
+                        android:textAppearance="@style/TextStyleNormal"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_igst_percentage"
+                        android:layout_width="@dimen/size_120dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:gravity="end"
+                        android:layout_toStartOf="@+id/tv_igst_amount"
+                        android:layout_marginStart="@dimen/size_4dp"
+                        android:layout_below="@+id/tv_cgst_title"
+                        android:layout_marginTop="@dimen/size_8dp"
+                        android:text="0"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextDark"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_igst_amount"
+                        android:layout_width="@dimen/size_120dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:gravity="end"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="@dimen/size_4dp"
+                        android:layout_below="@+id/tv_cgst_title"
+                        android:layout_marginTop="@dimen/size_8dp"
+                        android:text="0.00"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextDark"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_title_summary_details"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Summary"
+                        android:layout_marginTop="@dimen/size_24dp"
+                        android:layout_below="@+id/tv_igst_title"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="@dimen/text_18sp" />
+
+                    <View
+                        android:id="@+id/view_separator_summary_details"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/separator_height"
+                        android:layout_below="@+id/tv_title_summary_details"
+                        android:layout_marginTop="@dimen/size_8dp"
+                        android:layout_marginBottom="@dimen/size_8dp"
+                        android:background="@color/colorTextDarkGrey" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_summary_total_freight_amount_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:layout_toStartOf="@+id/tv_summary_total_freight_amount"
+                        android:maxLines="3"
+                        android:layout_below="@+id/view_separator_summary_details"
+                        android:text="Total Freight Amount"
+                        android:layout_marginTop="@dimen/size_8dp"
+                        android:textAppearance="@style/TextStyleNormal"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_summary_total_freight_amount"
+                        android:layout_width="@dimen/size_150dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:gravity="end"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="@dimen/size_4dp"
+                        android:layout_below="@+id/view_separator_summary_details"
+                        android:layout_marginTop="@dimen/size_8dp"
+                        android:text="0.00"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextDark"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_summary_total_tax_amount_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:layout_toStartOf="@+id/tv_summary_total_tax_amount"
+                        android:maxLines="3"
+                        android:layout_below="@+id/tv_summary_total_freight_amount_title"
+                        android:text="Tax Amount"
+                        android:layout_marginTop="@dimen/size_10dp"
+                        android:textAppearance="@style/TextStyleNormal"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_summary_total_tax_amount"
+                        android:layout_width="@dimen/size_150dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:gravity="end"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="@dimen/size_4dp"
+                        android:layout_below="@+id/tv_summary_total_freight_amount_title"
+                        android:layout_marginTop="@dimen/size_10dp"
+                        android:text="0.00"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextDark"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_grand_total_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:layout_toStartOf="@+id/tv_grand_total"
+                        android:maxLines="3"
+                        android:layout_below="@+id/tv_summary_total_tax_amount_title"
+                        android:text="Grand Total"
+                        android:layout_marginTop="@dimen/size_10dp"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="@dimen/text_16sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_grand_total"
+                        android:layout_width="@dimen/size_150dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:gravity="end"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="@dimen/size_4dp"
+                        android:layout_below="@+id/tv_summary_total_tax_amount_title"
+                        android:layout_marginTop="@dimen/size_10dp"
+                        android:text="0.00"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="@dimen/text_16sp" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</layout>
+

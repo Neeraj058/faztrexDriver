@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:elevation="0dp">
+
+            <include
+                android:id="@+id/toolbar_main"
+                layout="@layout/toolbar_main" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/btn_update_pod"
+            android:layout_below="@id/app_bar_layout">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/size_8dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_title_delivery_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="Delivery Status"
+                    android:textAppearance="@style/TextStyleNormal"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="@dimen/text_12sp"
+                    tools:ignore="HardcodedText" />
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spinner_delivery_status"
+                    style="@style/Widget.AppCompat.Spinner.Underlined"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_title_delivery_status"
+                    android:layout_marginTop="@dimen/size_6dp"
+                    android:backgroundTint="@color/colorDivider"
+                    android:spinnerMode="dialog" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_title_undelivered_reason"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignWithParentIfMissing="true"
+                    android:layout_below="@+id/spinner_delivery_status"
+                    android:layout_marginTop="@dimen/size_8dp"
+                    android:gravity="center_vertical"
+                    android:text="Undelivered Reason"
+                    android:textAppearance="@style/TextStyleNormal"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="@dimen/text_12sp"
+                    android:visibility="gone"
+                    tools:ignore="HardcodedText" />
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spinner_undelivered_reason"
+                    style="@style/Widget.AppCompat.Spinner.Underlined"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignWithParentIfMissing="true"
+                    android:layout_below="@+id/tv_title_undelivered_reason"
+                    android:layout_marginTop="@dimen/size_6dp"
+                    android:backgroundTint="@color/colorDivider"
+                    android:spinnerMode="dialog"
+                    android:visibility="gone" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_title_payment_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignWithParentIfMissing="true"
+                    android:layout_below="@+id/spinner_undelivered_reason"
+                    android:layout_marginTop="@dimen/size_6dp"
+                    android:gravity="center_vertical"
+                    android:text="Payment Type"
+                    android:textAppearance="@style/TextStyleNormal"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="@dimen/text_12sp"
+                    android:visibility="gone"
+                    tools:ignore="HardcodedText" />
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spinner_payment_type"
+                    style="@style/Widget.AppCompat.Spinner.Underlined"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignWithParentIfMissing="true"
+                    android:layout_below="@+id/tv_title_payment_type"
+                    android:layout_marginTop="@dimen/size_6dp"
+                    android:backgroundTint="@color/colorDivider"
+                    android:spinnerMode="dialog"
+                    android:visibility="gone" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tnl_cardNumber"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/spinner_payment_type"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/size_6dp"
+                    android:textColorHint="@color/colorTextHint"
+                    android:visibility="gone">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/colorDivider"
+                        android:hint="Enter card number"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPersonName"
+                        android:maxLength="500"
+                        android:maxLines="1"
+                        android:nextFocusDown="@id/tnl_width"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="@dimen/text_13sp"
+                        tools:ignore="HardcodedText" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/lv_sub_container_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignWithParentIfMissing="true"
+                    android:layout_below="@id/tnl_cardNumber"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/size_6dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tnl_ref_no"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColorHint="@color/colorTextHint">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edtRefNo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/colorDivider"
+                            android:enabled="false"
+                            android:hint="Ref. No."
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:maxLength="100"
+                            android:maxLines="1"
+                            android:nextFocusDown="@id/tnl_width"
+                            android:textAppearance="@style/TextStyleSemiBold"
+                            android:textColor="@color/colorTextPrimary"
+                            android:textSize="@dimen/text_13sp"
+                            tools:ignore="HardcodedText" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tnl_ref_date"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/size_6dp"
+                        android:layout_weight="1"
+                        android:textColorHint="@color/colorTextHint">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edtRefDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/colorDivider"
+                            android:clickable="true"
+                            android:drawableStart="@drawable/ic_custom_calendar"
+                            android:drawablePadding="@dimen/size_6dp"
+                            android:drawableTint="@color/colorTextDarkGrey"
+                            android:focusable="true"
+                            android:focusableInTouchMode="false"
+                            android:hint="Ref. Date"
+                            android:imeOptions="actionNext"
+                            android:longClickable="false"
+                            android:maxLength="10"
+                            android:maxLines="1"
+                            android:nextFocusDown="@id/tnl_height"
+                            android:textAppearance="@style/TextStyleSemiBold"
+                            android:textColor="@color/colorTextPrimary"
+                            android:textSize="@dimen/text_13sp"
+                            tools:ignore="HardcodedText,UnusedAttribute" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tnl_payee"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/lv_sub_container_1"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/size_6dp"
+                    android:textColorHint="@color/colorTextHint"
+                    android:visibility="gone">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/colorDivider"
+                        android:hint="Payee Details"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPersonName"
+                        android:maxLength="500"
+                        android:maxLines="1"
+                        android:nextFocusDown="@id/tnl_width"
+                        android:textAppearance="@style/TextStyleSemiBold"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="@dimen/text_13sp"
+                        tools:ignore="HardcodedText" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/container_section_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tnl_payee"
+                    android:layout_marginTop="@dimen/size_8dp"
+                    android:baselineAligned="false"
+                    android:weightSum="3">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tnl_freight_amount"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/size_2dp"
+                        android:layout_marginTop="@dimen/size_4dp"
+                        android:layout_weight="1"
+                        android:enabled="false"
+                        android:textColorHint="@color/colorTextHint">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            style="@style/TextStyleSemiBold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/colorDivider"
+                            android:hint="Freight Amount"
+                            android:maxLines="1"
+                            android:textAppearance="@style/TextStyleNormal"
+                            android:textColor="@color/colorTextPrimary"
+                            android:textSize="@dimen/text_12sp"
+                            tools:ignore="HardcodedText" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tnl_tds_amount"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/size_4dp"
+                        android:layout_marginTop="@dimen/size_4dp"
+                        android:layout_weight="1"
+                        android:enabled="false"
+                        android:textColorHint="@color/colorTextHint">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            style="@style/TextStyleSemiBold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/colorDivider"
+                            android:hint="Tax"
+                            android:inputType="numberDecimal"
+                            android:maxLines="1"
+                            android:selectAllOnFocus="true"
+                            android:textAppearance="@style/TextStyleNormal"
+                            android:textColor="@color/colorTextPrimary"
+                            android:textSize="@dimen/text_12sp"
+                            tools:ignore="HardcodedText" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tnl_invoice_amount"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/size_2dp"
+                        android:layout_marginTop="@dimen/size_4dp"
+                        android:layout_weight="1"
+                        android:enabled="false"
+                        android:textColorHint="@color/colorTextHint">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            style="@style/TextStyleSemiBold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/colorDivider"
+                            android:hint="Invoice Amount"
+                            android:maxLines="1"
+                            android:textAppearance="@style/TextStyleNormal"
+                            android:textColor="@color/colorTextPrimary"
+                            android:textSize="@dimen/text_12sp"
+                            tools:ignore="HardcodedText" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/container_section_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/container_section_1"
+                    android:layout_marginTop="@dimen/size_8dp"
+                    android:baselineAligned="false">
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tnl_collected_amount"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/size_4dp"
+                        android:layout_weight="1"
+                        android:textColorHint="@color/colorTextHint">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            style="@style/TextStyleSemiBold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/colorDivider"
+                            android:hint="Collected Amount"
+                            android:inputType="numberDecimal"
+                            android:maxLines="1"
+                            android:selectAllOnFocus="true"
+                            android:textAppearance="@style/TextStyleNormal"
+                            android:textColor="@color/colorTextPrimary"
+                            android:textSize="@dimen/text_12sp"
+                            tools:ignore="HardcodedText" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tnl_balance_amount"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/size_4dp"
+                        android:layout_marginTop="@dimen/size_4dp"
+                        android:layout_weight="1"
+                        android:enabled="false"
+                        android:textColorHint="@color/colorTextHint">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            style="@style/TextStyleSemiBold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/colorDivider"
+                            android:hint="Balance Amount"
+                            android:maxLines="1"
+                            android:textAppearance="@style/TextStyleNormal"
+                            android:textColor="@color/colorTextPrimary"
+                            android:textSize="@dimen/text_12sp"
+                            tools:ignore="HardcodedText" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tnl_amount_status"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/size_2dp"
+                        android:layout_marginTop="@dimen/size_4dp"
+                        android:layout_weight="1"
+                        android:enabled="false"
+                        android:textColorHint="@color/colorTextHint">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            style="@style/TextStyleSemiBold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/colorDivider"
+                            android:enabled="false"
+                            android:hint="Amount Status"
+                            android:maxLines="1"
+                            android:textAppearance="@style/TextStyleNormal"
+                            android:textColor="@color/colorTextPrimary"
+                            android:textSize="@dimen/text_12sp"
+                            tools:ignore="HardcodedText" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <RelativeLayout
+                    android:id="@+id/relativeUploadImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignWithParentIfMissing="true"
+                    android:layout_below="@id/container_section_2"
+                    android:layout_centerHorizontal="true"
+                    android:paddingStart="@dimen/size_5dp"
+                    android:paddingTop="@dimen/size_5dp"
+                    android:paddingEnd="@dimen/size_5dp"
+                    android:paddingBottom="@dimen/size_10dp"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_image_pod"
+                        android:layout_width="@dimen/size_120dp"
+                        android:layout_height="@dimen/size_120dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/size_25dp"
+                        android:background="@drawable/bg_dotted_line"
+                        android:contentDescription="@string/image_description"
+                        android:padding="@dimen/size_40dp"
+                        android:src="@drawable/ic_upload"
+                        android:tint="@color/colorBlack"
+                        android:visibility="visible" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_title_image_message"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/iv_image_pod"
+                        android:layout_marginTop="@dimen/size_10dp"
+                        android:gravity="center_horizontal"
+                        android:text="Click to upload POD file"
+                        android:textAppearance="@style/TextStyleNormal"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="@dimen/text_10sp"
+                        android:visibility="visible"
+                        tools:ignore="HardcodedText" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_image"
+                        android:layout_width="@dimen/size_250dp"
+                        android:layout_height="@dimen/size_250dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/size_25dp"
+                        android:contentDescription="@string/image_description"
+                        android:scaleType="fitXY"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/container_section_2"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <RadioButton
+                        android:id="@+id/radioUploadStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/size_10dp"
+                        android:buttonTint="@color/colorPrimary"
+                        android:checked="true"
+                        android:text="Update Delivery Status"
+                        android:textSize="@dimen/text_14sp"
+                        tools:ignore="HardcodedText" />
+
+                    <RadioButton
+                        android:id="@+id/radioPODUpload"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/colorPrimary"
+                        android:buttonTint="@color/colorPrimary"
+                        android:checked="false"
+                        android:text="POD Upload"
+                        android:textSize="@dimen/text_14sp"
+                        tools:ignore="HardcodedText" />
+
+                </RadioGroup>
+
+                <RelativeLayout
+                    android:id="@+id/relativeMpShah"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_alignWithParentIfMissing="true"
+                    android:layout_below="@+id/radioGroup"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="@dimen/size_10dp"
+                    android:layout_marginTop="@dimen/size_10dp"
+                    android:layout_marginEnd="@dimen/size_10dp"
+                    android:layout_marginBottom="@dimen/size_10dp"
+                    android:background="@drawable/bg_rounded"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edtMPesaId"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/btnRequest"
+                        android:background="@null"
+                        android:hint="Enter M-Pesa Number"
+                        android:inputType="phone"
+                        android:padding="10dp"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#DDFFFFFF"
+                        tools:ignore="HardcodedText"
+                        tools:text="+91 8238345247" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnRequest"
+                        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:backgroundTint="#36b649"
+                        android:insetTop="0dp"
+                        android:insetRight="0dp"
+                        android:insetBottom="0dp"
+                        android:text="Request Now"
+                        android:textAllCaps="false"
+                        app:cornerRadius="10dp"
+                        app:strokeColor="@color/colorWhite"
+                        app:strokeWidth="0dp"
+                        tools:ignore="HardcodedText" />
+
+                </RelativeLayout>
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/lottieProgress"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignWithParentIfMissing="true"
+                    android:layout_below="@id/radioGroup"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="@dimen/size_10dp"
+                    android:layout_marginTop="@dimen/size_10dp"
+                    android:visibility="gone"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/progress" />
+
+                <RelativeLayout
+                    android:id="@+id/relativePodImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignWithParentIfMissing="true"
+                    android:layout_below="@id/relativeMpShah"
+                    android:layout_centerHorizontal="true"
+                    android:paddingStart="@dimen/size_5dp"
+                    android:paddingTop="@dimen/size_5dp"
+                    android:paddingEnd="@dimen/size_5dp"
+                    android:paddingBottom="@dimen/size_10dp"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_upload_pod"
+                        android:layout_width="@dimen/size_120dp"
+                        android:layout_height="@dimen/size_120dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/size_25dp"
+                        android:background="@drawable/bg_dotted_line"
+                        android:contentDescription="@string/image_description"
+                        android:padding="@dimen/size_40dp"
+                        android:src="@drawable/ic_upload"
+                        android:tint="@color/colorBlack"
+                        android:visibility="visible" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_title_upload_message"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/iv_upload_pod"
+                        android:layout_marginTop="@dimen/size_10dp"
+                        android:gravity="center_horizontal"
+                        android:text="Click to upload POD file"
+                        android:textAppearance="@style/TextStyleNormal"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="@dimen/text_10sp"
+                        android:visibility="visible"
+                        tools:ignore="HardcodedText" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_pod"
+                        android:layout_width="@dimen/size_250dp"
+                        android:layout_height="@dimen/size_250dp"
+
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/size_25dp"
+                        android:contentDescription="@string/image_description"
+                        android:scaleType="fitXY"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_update_pod"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_60dp"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/size_8dp"
+            android:layout_marginEnd="@dimen/size_8dp"
+            android:layout_marginBottom="@dimen/size_8dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:gravity="center"
+            android:text="Update POD"
+            android:textAllCaps="false"
+            android:textAppearance="@style/TextStyleSemiBold"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_16sp"
+            android:visibility="gone"
+            app:cornerRadius="@dimen/size_4dp"
+            app:rippleColor="@color/colorPrimaryDark"
+            tools:ignore="HardcodedText" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_update_delivry"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_60dp"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/size_8dp"
+            android:layout_marginEnd="@dimen/size_8dp"
+            android:layout_marginBottom="@dimen/size_8dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:gravity="center"
+            android:text="Update"
+            android:textAllCaps="false"
+            android:textAppearance="@style/TextStyleSemiBold"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_16sp"
+            android:visibility="gone"
+            app:cornerRadius="@dimen/size_4dp"
+            app:rippleColor="@color/colorPrimaryDark"
+            tools:ignore="HardcodedText" />
+
+        <!--  <com.google.android.material.button.MaterialButton
+              android:id="@+id/btn_submit"
+              style="@style/Widget.MaterialComponents.Button"
+              android:layout_width="match_parent"
+              android:layout_height="@dimen/size_60dp"
+              android:layout_alignWithParentIfMissing="true"
+              android:layout_alignParentBottom="true"
+              android:layout_margin="@dimen/size_10dp"
+              android:gravity="center"
+              android:text="Save"
+              android:textAllCaps="false"
+              android:textAppearance="@style/TextStyleSemiBold"
+              android:textColor="@color/colorWhite"
+              android:textSize="@dimen/text_18sp"
+              android:visibility="visible"
+              app:backgroundTint="@color/colorPrimaryDark"
+              app:cornerRadius="@dimen/size_4dp"
+              app:rippleColor="@color/colorAccent"
+              tools:ignore="HardcodedText"
+              tools:targetApi="lollipop" />-->
+
+    </RelativeLayout>
+
+</layout>

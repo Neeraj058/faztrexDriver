@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_view_on_map"
+        android:title="@string/menu_title_view_on_map"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_view_detail"
+        android:title="@string/menu_title_view_details"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_mark_as_picked"
+        android:title="@string/menu_title_mark_as_picked"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_mark_as_delivered"
+        android:title="@string/menu_title_mark_as_delivered"
+        app:showAsAction="never" />
+
+</menu>
